@@ -1,0 +1,32 @@
+<html>
+<head>   
+</head>
+<body>
+
+    <section data-position='prescriptions'>
+        <ul>
+        <% for ( var i=0; i<alltheprescriptions.length; i++) { %>
+           <li> <%= alltheprescriptions[i].patientName %> &nbsp;</li>
+           <li><%= alltheprescriptions[i].prescriptionDescription %> &nbsp;</li>
+            <li><%= alltheprescriptions[i].prescriptionPrice %> &nbsp;</li>
+            <li><%= alltheprescriptions[i].prescriptionId %> &nbsp;</li>
+            
+            
+            <br >
+        <% } %>
+        </ul>
+    </section>
+    <br >
+    <h1> Search by Patient name </h1>
+    <form action="/prescription/findbyname" method="GET" >
+    <input type="text" name= "patientName" placeholder="Enter prescription name" />
+    <input type="submit" value="Search name" />
+    </form>
+    <br >
+    <h1> Search by Id </h1>
+    <form action="/prescription/findbyid" method="GET" >
+    <input type="text" name= "prescriptionId" placeholder="Enter prescription Id" />
+    <input type="submit" value="Search year" />
+    </form>
+</body>
+</html>
